@@ -5,11 +5,11 @@ angular
 summonersController.$inject = ['Summoner']
 function summonersController(Summoner){
   var self = this
-  self.name = ""
+  self.name = "Scy4"
 
   self.getSummoner = function(){
     console.log('clicked');
-    Summoner.getSummoner(function(data){
+    Summoner.getSummoner({ name: self.name }, function(data){
       console.log(data);
     })
   }

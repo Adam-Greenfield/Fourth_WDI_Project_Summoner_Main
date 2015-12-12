@@ -2,13 +2,15 @@ angular
   .module('championApp')
   .factory('Summoner', Summoner)
 
-Summoner.$inject = ['$resource', 'LOL'];
-function Summoner($resource, LOL){
+Summoner.$inject = ['$resource', 'LOL', 'LOLKEY'];
+function Summoner($resource, LOL, LOLKEY){
 
-  return $resource(LOL, null, {
+  // name = 'Scy4'
+
+  return $resource(LOL, { api_key: LOLKEY, name: '@name' }, {
     'getSummoner': {
       method: 'GET',
-      url: LOL + '/v1.4/summoner/by-name/' + 'Scy4' + '?api_key=' + '1b05241e-7e60-4556-a73c-2ac841ef9735'
+      url: LOL + '/v1.4/summoner/by-name/:name'
     }
   })
 
