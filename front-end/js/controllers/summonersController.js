@@ -6,7 +6,7 @@ summonersController.$inject = ['Summoner']
 function summonersController(Summoner){
   var self = this
   self.name = ""
-  self.season = "SEASON2015"
+  self.season = "SEASON2014"
 
   self.getSummoner = function(){
     console.log('clicked');
@@ -14,7 +14,8 @@ function summonersController(Summoner){
       console.log(data);
       console.log(data[self.name]);
       console.log(data[self.name].id);
-      Summoner.getRankedData({ id: data[self.name].id }, function(data){
+      Summoner.getRankedData({ id: data[self.name].id, season: self.season }, function(data){
+        console.log(data.champions)
         console.log(data)
       })
     })
