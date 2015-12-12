@@ -1,5 +1,5 @@
 angular
-  .module('userApp')
+  .module('championApp')
   .config(MainRouter);
 
 function MainRouter($stateProvider, $urlRouterProvider, $locationProvider){
