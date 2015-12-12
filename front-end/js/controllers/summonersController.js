@@ -4,7 +4,7 @@ angular
 
 summonersController.$inject = ['Summoner']
 function summonersController(Summoner){
-
-  this.name = ""
-
+  var self = this
+  self.name = ""
+  
 }

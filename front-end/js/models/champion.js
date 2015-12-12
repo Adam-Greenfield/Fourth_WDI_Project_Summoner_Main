@@ -1,6 +1,6 @@
 angular
   .module('championApp')
-  factory('Champion', Champion)
+  .factory('Champion', Champion)
 
 Champion.$inject = ['$resource', 'LOL'];
 function Champion($resource, LOL){

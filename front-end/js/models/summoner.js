@@ -1,6 +1,6 @@
 angular
   .module('championApp')
-  factory('Summoner', Summoner)
+  .factory('Summoner', Summoner)
 
 Summoner.$inject = ['$resource', 'LOL'];
 function Summoner($resource, LOL){

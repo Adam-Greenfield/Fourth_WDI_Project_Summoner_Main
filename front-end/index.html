@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="championApp">
 <head>
   <title>Summoner Main</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -12,13 +12,16 @@
   <script type="text/javascript" src="./js/controllers/championsController.js"></script>
   <script type="text/javascript" src="./js/controllers/summonersController.js"></script>
   <script type="text/javascript" src="./js/models/user.js"></script>
+  <script type="text/javascript" src="./js/models/summoner.js"></script>
+  <script type="text/javascript" src="./js/models/champion.js"></script>
   <script type="text/javascript" src="./js/services/authInterceptor.js"></script>
   <script type="text/javascript" src="./js/services/tokenService.js"></script>
   <script type="text/javascript" src="./js/controllers/mainRouter.js"></script>
 </head>
 
 <body ng-controller="summonersController as summoner">
-  <input type="text" ng-model=""
+  <input type="text" ng-model="summoner.name">
+  <p>{{ summoner.name }}</p>
 
 </body>
 
