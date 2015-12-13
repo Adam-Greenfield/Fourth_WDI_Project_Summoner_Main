@@ -28,6 +28,13 @@
     <option value="SEASON2014">2014</option>
     <option value="SEASON2015">2015</option>
   </select>
+
+  <select ng-model="summoner.region">
+    <option value="euw">EUW</option>
+    <option value="eune">EUNE</option>
+  </select>
+  <p>{{ summoner.region }}</p>
+
   <button ng-click="summoner.getSummoner()" ui-sref="profile">Get Summoner</button>
   <p>{{ summoner.id }}</p>
 
