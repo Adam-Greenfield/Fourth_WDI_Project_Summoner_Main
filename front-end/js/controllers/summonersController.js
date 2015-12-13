@@ -15,6 +15,7 @@ function summonersController(Summoner, Champion){
         self.champArray = data.champions
         self.champArray.pop()
         console.log(self.champArray)
+        console.log(championJson)
       })
     })
   }

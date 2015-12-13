@@ -1,7 +1,7 @@
 <div>
   <ul>
     <li ng-repeat="champion in summoner.champArray">
-      {{ champion.id }}
+      {{ champion.id }} {{ championJson.data[champion.id] }}
     </li>
   </ul>
 </div>
