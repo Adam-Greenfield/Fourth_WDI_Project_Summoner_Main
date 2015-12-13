@@ -1,7 +1,7 @@
 <div ng-controller="championsController as champions">
   <ul>
     <li ng-repeat="champion in summoner.champArray">
-      {{ champion.id }} {{ champions.champions.data[champion.id] }}
+      {{ champion.id }} {{ champions.champions.data[champion.id].name }} games won: {{ champion.stats.totalSessionsWon }}
     </li>
   </ul>
   <button ng-click="champions.check()">check</button>
