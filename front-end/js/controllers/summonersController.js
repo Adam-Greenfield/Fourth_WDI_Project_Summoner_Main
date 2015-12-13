@@ -13,14 +13,9 @@ function summonersController(Summoner, Champion){
     Summoner.getSummoner({ name: self.name }, function(data){
       Summoner.getRankedData({ id: data[self.name].id, season: self.season }, function(data){
         self.champArray = data.champions
+        self.champArray.pop()
         console.log(self.champArray)
-        self.getChampions()
       })
     })
-  }
-
-  self.getChampions = function(){
-    console.log('getting champions')
-    Champion.getChampions
   }
 }
