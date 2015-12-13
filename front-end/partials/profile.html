@@ -1,6 +1,7 @@
 <div ng-controller="championsController as champions">
   <ul>
     <li ng-repeat="champion in summoner.champArray">
+    <img ng-src="http://ddragon.leagueoflegends.com/cdn/5.24.2/img/champion/{{ champions.stopGap(champions.champions.data[champion.id].name) }}.png ">
       {{ champion.id }} {{ champions.champions.data[champion.id].name }} games won: {{ champion.stats.totalSessionsWon }}
     </li>
   </ul>

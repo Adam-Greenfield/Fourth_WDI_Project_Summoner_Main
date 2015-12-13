@@ -7,5 +7,3 @@ angular
   // .config(function($httpProvider){
   //   $httpProvider.interceptors.push('AuthInterceptor');
   // })
-
-var name = ""
