@@ -6,7 +6,7 @@ summonersController.$inject = ['Summoner']
 function summonersController(Summoner){
   var self = this
   self.name = ""
-  self.season = "SEASON2014"
+  self.season = ""
 
   self.getSummoner = function(){
     console.log('clicked');

@@ -22,6 +22,11 @@
 <body ng-controller="summonersController as summoner">
   <input type="text" ng-model="summoner.name">
   <p>{{ summoner.name }}</p>
+  <select ng-model="summoner.season">
+    <option value="SEASON3">2013</option>
+    <option value="SEASON2014">2014</option>
+    <option value="SEASON2015">2015</option>
+  </select>
   <button ng-click="summoner.getSummoner()">Get Summoner</button>
   <p>{{ summoner.id }}</p>
 </body>
