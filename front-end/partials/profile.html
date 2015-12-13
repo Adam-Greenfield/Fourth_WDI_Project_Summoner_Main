@@ -1,7 +1,8 @@
-<div>
+<div ng-controller="championsController as champions">
   <ul>
     <li ng-repeat="champion in summoner.champArray">
-      {{ champion.id }} {{ championJson.data[champion.id] }}
+      {{ champion.id }} {{ champions.champions.data[champion.id] }}
     </li>
   </ul>
+  <button ng-click="champions.check()">check</button>
 </div>
