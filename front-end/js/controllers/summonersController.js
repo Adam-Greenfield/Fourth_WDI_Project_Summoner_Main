@@ -2,22 +2,25 @@ angular
   .module('championApp')
   .controller('summonersController', summonersController)
 
-summonersController.$inject = ['Summoner']
-function summonersController(Summoner){
+summonersController.$inject = ['Summoner', 'Champion']
+function summonersController(Summoner, Champion){
   var self = this
   self.name = ""
   self.season = ""
+  self.champArray = []
 
   self.getSummoner = function(){
-    console.log('clicked');
     Summoner.getSummoner({ name: self.name }, function(data){
-      console.log(data);
-      console.log(data[self.name]);
-      console.log(data[self.name].id);
       Summoner.getRankedData({ id: data[self.name].id, season: self.season }, function(data){
-        console.log(data.champions)
-        console.log(data)
+        self.champArray = data.champions
+        console.log(self.champArray)
+        self.getChampions()
       })
     })
+  }
+
+  self.getChampions = function(){
+    console.log('getting champions')
+    Champion.getChampions
   }
 }

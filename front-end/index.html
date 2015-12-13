@@ -27,8 +27,12 @@
     <option value="SEASON2014">2014</option>
     <option value="SEASON2015">2015</option>
   </select>
-  <button ng-click="summoner.getSummoner()">Get Summoner</button>
+  <button ng-click="summoner.getSummoner()" ui-sref="profile">Get Summoner</button>
   <p>{{ summoner.id }}</p>
+
+<div ui-view>
+  
+</div>
 </body>
 
 </html>
