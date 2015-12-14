@@ -19,6 +19,7 @@ function usersController(User, TokenService, $location){
   self.login = function(){
     console.log('login')
     User.login(self.user, userLogIn);
+
   }
   self.register = function() {
     User.register(self.user, userLogIn);
@@ -27,6 +28,7 @@ function usersController(User, TokenService, $location){
     TokenService.removeToken();
     self.all = [];
     self.user = {};
+    $location.path('/login')
   }
   self.isLoggedIn = function(){
     return !!TokenService.getToken();
