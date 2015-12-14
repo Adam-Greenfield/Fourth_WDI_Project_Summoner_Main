@@ -12,6 +12,14 @@ function MainRouter($stateProvider, $urlRouterProvider, $locationProvider){
     url: "/champion/:id",
     templateUrl: "/partials/champion.html", controller: "championsController as champions"
   })
+  .state('login', {
+    url: "/login",
+    templateUrl: "/partials.login.html"
+  })
+  .state('register', {
+    url: "/register",
+    templateUrl: "/partials/register.html"
+  })
 
   $urlRouterProvider.otherwise('/');
   $locationProvider.html5Mode({

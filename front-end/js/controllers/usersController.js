@@ -2,8 +2,8 @@ angular
   .module('championApp')
   .controller('usersController', usersController)
 
-usersController.$inject = ['User']
-function usersController(User){
+usersController.$inject = ['User', 'TokenService']
+function usersController(User, TokenService){
   var self = this
 
   self.all = [];
@@ -13,7 +13,6 @@ function usersController(User){
     var token = res.token ? res.token : null
     if(token){
       console.log(res);
-      self.getUsers();
       self.user = TokenService.getUser();
       $location.path('/');
     }
@@ -35,7 +34,6 @@ function usersController(User){
 
   }
   if(self.isLoggedIn()){
-    self.getUsers();
     self.user = TokenService.getUser();
     console.log(self.user);
   }

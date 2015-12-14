@@ -1,0 +1,21 @@
+<section ng-controller="usersController as user">
+  <h3>Register</h3>
+  <form id="register" ng-submit="user.register()">
+    <label for="username">User name</label>
+    <input type="text" name="username" placeholder="Username" ng-model="user.user.username">
+ 
+    <label for="email">Email</label>
+    <input type="text" name="email" placeholder="Email" ng-model="user.user.email">
+
+    <label for="firstname">Name</label>
+    <input type="text" name="firstname" placeholder="Name" ng-model="user.user.firstname">
+
+    <label for="password">Password</label>
+    <input type="text" name="password" placeholder="Password" ng-model="user.user.password">
+
+    <label for="region">Region</label>
+    <input type="text" name="region" placeholder="Region" ng-model="user.user.region">
+    
+    <input type="submit" value="Commit">
+  </form>
+</section>

@@ -11,6 +11,7 @@
   <script type="text/javascript" src="./js/controllers/usersController.js"></script>
   <script type="text/javascript" src="./js/controllers/championsController.js"></script>
   <script type="text/javascript" src="./js/controllers/summonersController.js"></script>
+  <script type="text/javascript" src="./js/controllers/usersController.js"></script>
   <script type="text/javascript" src="./js/models/user.js"></script>
   <script type="text/javascript" src="./js/models/summoner.js"></script>
   <script type="text/javascript" src="./js/models/champion.js"></script>
@@ -21,6 +22,8 @@
 </head>
 
 <body ng-controller="summonersController as summoner">
+  <a ui-sref-active="active" ui-sref="login">login</a>
+  <a ui-sref-active="active" ui-sref="register">register</a>
   <input type="text" ng-model="summoner.name">
   <p>{{ summoner.name }}</p>
   <select ng-model="summoner.season">
