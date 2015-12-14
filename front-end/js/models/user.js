@@ -1,5 +1,5 @@
 angular
-  .module('championAPP')
+  .module('championApp')
   .factory('User', User)
 
 User.$inject = ['$resource', 'API'];
