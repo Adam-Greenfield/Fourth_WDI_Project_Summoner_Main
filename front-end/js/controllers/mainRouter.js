@@ -14,7 +14,7 @@ function MainRouter($stateProvider, $urlRouterProvider, $locationProvider){
   })
   .state('login', {
     url: "/login",
-    templateUrl: "/partials.login.html"
+    templateUrl: "/partials/login.html"
   })
   .state('register', {
     url: "/register",

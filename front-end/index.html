@@ -22,8 +22,9 @@
 </head>
 
 <body ng-controller="summonersController as summoner">
-  <a ui-sref-active="active" ui-sref="login">login</a>
+  <a ui-sref-active="active" ui-sref="login">log in</a>
   <a ui-sref-active="active" ui-sref="register">register</a>
+  <a href="#" ng-controller="usersController as user" ng-click="user.logOut()" ng-show="user.isLoggedIn()">log out</a>
   <input type="text" ng-model="summoner.name">
   <p>{{ summoner.name }}</p>
   <select ng-model="summoner.season">
