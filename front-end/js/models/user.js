@@ -16,4 +16,4 @@ function User($resource, API){
       url: API + "/register"
     },
   });
-}
+};

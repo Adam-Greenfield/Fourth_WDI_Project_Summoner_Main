@@ -2,8 +2,8 @@ angular
   .module('championApp')
   .controller('championsController', championsController)
 
-championsController.$inject = ['$stateParams', 'Champion']
-function championsController($stateParams, Champion){
+championsController.$inject = ['$stateParams', '$location', 'Champion']
+function championsController($stateParams, $location, Champion){
   var self = this
   self.champions = championJson
   self.champion = {}
@@ -14,6 +14,8 @@ function championsController($stateParams, Champion){
   }
 
   self.showChampion = function(){
+    console.log("hi")
+    console.log(self.champion)
   }
 
   // self.stopGap = function(name){
