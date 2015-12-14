@@ -14,7 +14,6 @@ function championsController($stateParams, Champion){
   }
 
   self.showChampion = function(){
-    console.log()
   }
 
   // self.stopGap = function(name){
