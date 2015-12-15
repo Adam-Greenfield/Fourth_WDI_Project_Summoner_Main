@@ -34,6 +34,7 @@ function summonersController(Summoner, TokenService){
       self.skillLevel(champion);
     })
   }
+
   self.skillLevel = function(champion){
     console.log(champion.stats);
     var stats = champion.stats;
@@ -42,7 +43,7 @@ function summonersController(Summoner, TokenService){
      ((stats.totalDeathsPerSession) + (stats.totalChampionKills) + (stats.totalAssists))
      * 100);
     var pentaCheck = stats.totalPentaKills;
-    var skillPercent = (percentWon + killParticipation) / 2
+    var skillPercent = parseInt((percentWon + killParticipation) / 2);
 
     champion.pentaCheck = pentaCheck;
     champion.percentWon = percentWon;
