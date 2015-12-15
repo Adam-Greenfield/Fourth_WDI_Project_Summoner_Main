@@ -2,7 +2,7 @@
   <ul>
     <li ng-repeat="champion in summoner.champArray">
       <img ng-src="http://ddragon.leagueoflegends.com/cdn/5.24.2/img/champion/{{ champions.champions.data[champion.id].image.full }} ">
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{ champion.id }}">
+      <button ng-click="summoner.showStats(champion)" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{ champion.id }}">
         Statistics
       </button>
       <div class="skill_bar">
@@ -23,16 +23,26 @@
             </div>
             <div class="modal-body">
             <ul>
-              <li>{{ champions.champions.data[champion.id].name }} 
+              <li>{{ champions.champions.data[champion.id].name }}
+              </li>
+              <li><p>Skill</p>
+              <div class="skill_bar">
+                <div class="skill_bar_progress skill_percent" id="skill_subpercent{{ champion.id }}">
+                </div>    
+              </div>
+              </li>
+              <li><p>Winrate</p>
                 <div class="skill_bar">
-                  <div class="skill_bar_progress skill_percent" id="{{ champion.id }}">
+                  <div class="skill_bar_progress skill_winrate" id="skill_winrate{{ champion.id }}">
                   </div>    
                 </div>
               </li>
-              <li>games won: {{ champion.stats.totalSessionsWon }}</li>
-              <li>winrate: {{ champion.percentWon }} %</li>
-              <li>kda ratio: {{  champion.killParticipation }} %</li>
-              <li>skill: {{ champion.skillPercent }} %</li>
+              <li><p>KDA</p>
+                <div class="skill_bar">
+                  <div class="skill_bar_progress skill_kda" id="skill_kda{{ champion.id }}">
+                  </div>    
+                </div>
+              </li>
             </ul>
             </div>
             <div class="modal-footer">

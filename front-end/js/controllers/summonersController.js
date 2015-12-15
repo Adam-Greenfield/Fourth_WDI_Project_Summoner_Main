@@ -51,8 +51,15 @@ function summonersController(Summoner, TokenService, $timeout, animations){
     champion.skillPercent = skillPercent;
 
     function fn(){
-      console.log("hi")
       $('#skill_percent' + (champion.id).toString()).animate({width: champion.skillPercent + '%' }, 1000);
+
+    }
+
+    self.showStats = function(champion){
+      console.log("getStats");
+      $('#skill_subpercent' + (champion.id).toString()).animate({width: champion.skillPercent + '%' }, 1000);
+      $('#skill_winrate' + (champion.id).toString()).animate({width: champion.percentWon + '%' }, 1000);
+      $('#skill_kda' + (champion.id).toString()).animate({width: champion.killParticipation + '%' }, 1000);
     }
 
     $timeout(fn)
