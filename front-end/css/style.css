@@ -18,7 +18,7 @@
 .skill_bar_progress {
   width:0%;
   height:100%;
-  background: #7AD6AB;
+  background: #62EECE;
   text-align: center;
 }
 
@@ -35,6 +35,6 @@ body {
   width: 75%;
   position: relative;
   display: block;
-  background-color: #474747;
+  background-color: #1A1A1A;
 }
 
