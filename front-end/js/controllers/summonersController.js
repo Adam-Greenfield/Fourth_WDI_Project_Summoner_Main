@@ -38,7 +38,7 @@ function summonersController(Summoner, TokenService, $timeout){
   self.skillLevel = function(champion){
     console.log(champion.stats);
     var stats = champion.stats;
-    var percentWon = (stats.totalSessionsWon) / (stats.totalSessionsPlayed) * 100;
+    var percentWon = parseInt((stats.totalSessionsWon) / (stats.totalSessionsPlayed) * 100);
     var killParticipation = parseInt(((stats.totalAssists) + (stats.totalChampionKills)) /
      ((stats.totalDeathsPerSession) + (stats.totalChampionKills) + (stats.totalAssists))
      * 100);
