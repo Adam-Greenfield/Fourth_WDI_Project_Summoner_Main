@@ -1,13 +1,40 @@
 .skill_bar {
   width:600px;
   height:50px;
-  background:#c0c0c0;
+  background:#313131;
   margin-bottom:5px;
+  border: 2px solid white;
+  border-radius: 2px;
+}
+
+.skill_bar_sub {
+  width:400px;
+  height:35px;
+  background:#313131;
+  margin-bottom:5px;
+  text-align: center;
 }
 
 .skill_bar_progress {
   width:0%;
   height:100%;
-  background:#00f;
+  background: #7AD6AB;
+  text-align: center;
+}
+
+.barText {
+  color: white;
+}
+
+body {
+  background-color: #060606;
+}
+
+.main {
+  margin: 0 auto;
+  width: 75%;
+  position: relative;
+  display: block;
+  background-color: #474747;
 }
 

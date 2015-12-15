@@ -26,30 +26,32 @@
 </head>
 
 <body ng-controller="summonersController as summoner">
-  <a ui-sref-active="active" ui-sref="login">log in</a>
-  <a ui-sref-active="active" ui-sref="register">register</a>
-  <a href="#" ng-controller="usersController as user" ng-click="user.logOut()" ng-show="user.isLoggedIn()">log out</a>
-  <input type="text" ng-model="summoner.name">
-  <p>{{ summoner.name }}</p>
-  <select ng-model="summoner.season">
-    <option value="SEASON3">2013</option>
-    <option value="SEASON2014">2014</option>
-    <option selected="selected" value="SEASON2015">2015</option>
-  </select>
-
-  <select ng-model="summoner.region">
-    <option value="euw">EUW</option>
-    <option value="eune">EUNE</option>
-    <option value="na">NA</option>
-  </select>
-  <p>{{ summoner.region }}</p>
-
-  <button ng-click="summoner.getSummoner()" ui-sref="profile">Get Summoner</button>
-  <p>{{ summoner.id }}</p>
-
-  <div ui-view>
-    
-  </div>
+  <main class="main">
+    <a ui-sref-active="active" ui-sref="login">log in</a>
+    <a ui-sref-active="active" ui-sref="register">register</a>
+    <a href="#" ng-controller="usersController as user" ng-click="user.logOut()" ng-show="user.isLoggedIn()">log  out</a>
+    <input type="text" ng-model="summoner.name">
+    <p>{{ summoner.name }}</p>
+    <select ng-model="summoner.season">
+      <option value="SEASON3">2013</option>
+      <option value="SEASON2014">2014</option>
+      <option selected="selected" value="SEASON2015">2015</option>
+    </select>
+  
+    <select ng-model="summoner.region">
+      <option value="euw">EUW</option>
+      <option value="eune">EUNE</option>
+      <option value="na">NA</option>
+    </select>
+    <p>{{ summoner.region }}</p>
+  
+    <button ng-click="summoner.getSummoner()" ui-sref="profile">Get Summoner</button>
+    <p>{{ summoner.id }}</p>
+  
+    <div ui-view>
+      
+    </div>
+  </main>
 </body>
 
 </html>

@@ -3,17 +3,14 @@
     <li ng-repeat="champion in summoner.champArray">
       <img ng-src="http://ddragon.leagueoflegends.com/cdn/5.24.2/img/champion/{{ champions.champions.data[champion.id].image.full }} ">
       <button ng-click="summoner.showStats(champion)" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{ champion.id }}">
-        Statistics
+        {{ champions.champions.data[champion.id].name }}
       </button>
       <div class="skill_bar">
         <div class="skill_bar_progress skill_percent" id="skill_percent{{ champion.id }}">
+          <p class="barText">Skill: {{ champion.skillPercent }} %</p>
         </div>    
       </div>
-      name: {{ champions.champions.data[champion.id].name }} 
-      <!-- Button trigger modal -->
 
-
-      <!-- Modal -->
       <div class="modal fade" id="myModal{{ champion.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -26,20 +23,23 @@
               <li>{{ champions.champions.data[champion.id].name }}
               </li>
               <li><p>Skill</p>
-              <div class="skill_bar">
+              <div class="skill_bar_sub">
                 <div class="skill_bar_progress skill_percent" id="skill_subpercent{{ champion.id }}">
+                  <p class="barText">{{ champion.skillPercent }} %</p>
                 </div>    
               </div>
               </li>
               <li><p>Winrate</p>
-                <div class="skill_bar">
+                <div class="skill_bar_sub">
                   <div class="skill_bar_progress skill_winrate" id="skill_winrate{{ champion.id }}">
+                    <p class="barText">{{ champion.percentWon }} %</p>
                   </div>    
                 </div>
               </li>
               <li><p>KDA</p>
-                <div class="skill_bar">
+                <div class="skill_bar_sub">
                   <div class="skill_bar_progress skill_kda" id="skill_kda{{ champion.id }}">
+                    <p class="barText">{{ champion.killParticipation }} %</p>
                   </div>    
                 </div>
               </li>

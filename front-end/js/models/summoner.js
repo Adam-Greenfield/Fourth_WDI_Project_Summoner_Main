@@ -16,6 +16,5 @@ function Summoner($resource, LOL, LOLKEY){
       method: 'GET',
       url: 'https://:region' + LOL + ':region/v1.3/stats/by-summoner/:id/ranked?season=:season'
     },
-  })
-
+  });
 }
