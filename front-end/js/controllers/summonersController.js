@@ -2,8 +2,8 @@ angular
   .module('championApp')
   .controller('summonersController', summonersController)
 
-summonersController.$inject = ['Summoner', 'TokenService']
-function summonersController(Summoner, TokenService){
+summonersController.$inject = ['Summoner', 'TokenService', '$timeout']
+function summonersController(Summoner, TokenService, $timeout){
   var self = this
   self.user = ""
   self.name = ""
@@ -49,6 +49,16 @@ function summonersController(Summoner, TokenService){
     champion.percentWon = percentWon;
     champion.killParticipation = killParticipation;
     champion.skillPercent = skillPercent;
+
+    function fn(){
+      console.log("hi")
+      $('#' + (champion.id).toString()).animate({width: champion.skillPercent + '%' }, 1000);
+    }
+
+    $timeout(fn)
     return champion;
   }
+
+
+
 }

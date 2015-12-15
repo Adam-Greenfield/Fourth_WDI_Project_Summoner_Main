@@ -3,6 +3,10 @@
     <li ng-repeat="champion in summoner.champArray">
       <img ng-src="http://ddragon.leagueoflegends.com/cdn/5.24.2/img/champion/{{ champions.champions.data[champion.id].image.full }} ">
       <button ng-click="champions.setChampion(champion)">Champion details</button>
+      <div class="skill_bar">
+        <div class="skill_bar_progress skill_percent" id="{{ champion.id }}">
+        </div>    
+      </div>
       name: {{ champions.champions.data[champion.id].name }}, games won: {{ champion.stats.totalSessionsWon }}, winrate: {{ champion.percentWon }} %, kda ratio: {{  champion.killParticipation }} %, skill: {{ champion.skillPercent }} %
     </li>
   </ul>
