@@ -1,9 +1,9 @@
 angular
   .module('championApp')
-  .controller('summonersController', summonersController)
+  .controller('summonersController', summonersController);
 
-summonersController.$inject = ['Summoner', 'TokenService', '$timeout']
-function summonersController(Summoner, TokenService, $timeout){
+summonersController.$inject = ['Summoner', 'TokenService', '$timeout', 'animations']
+function summonersController(Summoner, TokenService, $timeout, animations){
   var self = this
   self.user = ""
   self.name = ""
