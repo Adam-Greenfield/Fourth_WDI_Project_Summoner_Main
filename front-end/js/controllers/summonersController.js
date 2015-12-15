@@ -52,7 +52,7 @@ function summonersController(Summoner, TokenService, $timeout, animations){
 
     function fn(){
       console.log("hi")
-      $('#' + (champion.id).toString()).animate({width: champion.skillPercent + '%' }, 1000);
+      $('#skill_percent' + (champion.id).toString()).animate({width: champion.skillPercent + '%' }, 1000);
     }
 
     $timeout(fn)

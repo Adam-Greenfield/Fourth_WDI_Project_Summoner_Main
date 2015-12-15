@@ -2,13 +2,47 @@
   <ul>
     <li ng-repeat="champion in summoner.champArray">
       <img ng-src="http://ddragon.leagueoflegends.com/cdn/5.24.2/img/champion/{{ champions.champions.data[champion.id].image.full }} ">
-      <button ng-click="champions.setChampion(champion)">Champion details</button>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{ champion.id }}">
+        Statistics
+      </button>
       <div class="skill_bar">
-        <div class="skill_bar_progress skill_percent" id="{{ champion.id }}">
+        <div class="skill_bar_progress skill_percent" id="skill_percent{{ champion.id }}">
         </div>    
       </div>
-      name: {{ champions.champions.data[champion.id].name }}, games won: {{ champion.stats.totalSessionsWon }}, winrate: {{ champion.percentWon }} %, kda ratio: {{  champion.killParticipation }} %, skill: {{ champion.skillPercent }} %
+      name: {{ champions.champions.data[champion.id].name }} 
+      <!-- Button trigger modal -->
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal{{ champion.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Champion stuff</h4>
+            </div>
+            <div class="modal-body">
+            <ul>
+              <li>{{ champions.champions.data[champion.id].name }} 
+                <div class="skill_bar">
+                  <div class="skill_bar_progress skill_percent" id="{{ champion.id }}">
+                  </div>    
+                </div>
+              </li>
+              <li>games won: {{ champion.stats.totalSessionsWon }}</li>
+              <li>winrate: {{ champion.percentWon }} %</li>
+              <li>kda ratio: {{  champion.killParticipation }} %</li>
+              <li>skill: {{ champion.skillPercent }} %</li>
+            </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </li>
+
   </ul>
   <button ng-click="champions.check()">check</button>
 </div>
