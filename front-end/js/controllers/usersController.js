@@ -36,7 +36,7 @@ function usersController(User, TokenService, $location){
 
   if(self.isLoggedIn()){
     self.user = TokenService.getUser();
-    console.log(self.user);
+    console.log(self.user.local);
 
   }
 }
