@@ -13,11 +13,6 @@ function championsController($stateParams, $location, Champion){
     console.log(self.champion);
   }
 
-  self.showChampion = function(){
-    console.log("hi")
-    console.log(self.champion)
-  }
-
   self.stopGap = function(name){
     console.log(name);
     if(name.match(/\s/)){
