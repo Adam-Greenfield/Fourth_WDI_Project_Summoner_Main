@@ -1,0 +1,11 @@
+<div>
+  <div class="champDiv">
+    <img class="champLogo" src="./resources/Screen%20Shot%202015-12-16%20at%2015.21.36.png" ng-click="summoner.getSummoner()" ui-sref="profile">
+  </div>
+  <select ng-model="summoner.season">
+    <option value="SEASON3">2013</option>
+    <option value="SEASON2014">2014</option>
+    <option selected="selected" value="SEASON2015">2015</option>
+  </select>
+  <button class="mainButton" ng-click="summoner.getSummoner()" ui-sref="profile">Get Statistics</button>
+</div>

@@ -20,6 +20,10 @@ function MainRouter($stateProvider, $urlRouterProvider, $locationProvider){
     url: "/register",
     templateUrl: "/partials/register.html"
   })
+  .state('home', {
+    url: "/",
+    templateUrl: "/partials/home.html"
+  })
 
   $urlRouterProvider.otherwise('/');
   $locationProvider.html5Mode({

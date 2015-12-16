@@ -28,46 +28,28 @@
 </head>
 
 <body ng-controller="summonersController as summoner">
-<div class="topBar" ng-controller="usersController as users">
-  <nav>
-    <ul class="navUl">
-      <li>
-        <a ui-sref-active="active" ui-sref="login">log in</a>
-      </li>
-      <li>
-        <a ui-sref-active="active" ui-sref="register">register</a>
-      </li>
-      <li>
-        <a href="#" ng-controller="usersController as user" ng-click="user.logOut()" ng-show="user.isLoggedIn()"> log  out</a>
-      </li>
-      <li>
-        <p id="log_in_text">Logged in as: {{ users.user.local.firstname }}</p>
-      </li>
-    </ul>
-  </nav>
+  <div class="topBar" ng-controller="usersController as users">
+    <nav>
+      <ul class="navUl">
+        <li>
+          <a ui-sref-active="active" ui-sref="login">log in</a>
+        </li>
+        <li>
+          <a ui-sref-active="active" ui-sref="register">register</a>
+        </li>
+        <li>
+          <a href="#" ng-controller="usersController as user" ng-click="user.logOut()" ng-show="user.isLoggedIn()"> log  out</a>
+        </li>
+        <li>
+          <p id="log_in_text">Logged in as: {{ users.user.local.firstname }}</p>
+        </li>
+      </ul>
+    </nav>
+  </div>
   
+  <div ui-view>
 
+  </div>
 
-
-</div>
-
-    
-    <select ng-model="summoner.season">
-      <option value="SEASON3">2013</option>
-      <option value="SEASON2014">2014</option>
-      <option selected="selected" value="SEASON2015">2015</option>
-    </select>
-  
-    <p>{{ summoner.region }}</p>
-    <div class="champDiv">
-      <img class="champLogo" src="./resources/Screen%20Shot%202015-12-16%20at%2015.21.36.png">
-    </div>
-    <button class="mainButton" ng-click="summoner.getSummoner()" ui-sref="profile">Get Statistics</button>
-    <p>{{ summoner.id }}</p>
-  
-    <div ui-view>
-      
-    </div>
 </body>
-
 </html>
