@@ -28,11 +28,19 @@
 </head>
 
 <body ng-controller="summonersController as summoner">
+<div class="topBar" ng-controller="usersController as users">
+  <nav>
+    <ul>
+      <li></li>
+    </ul>
+  </nav>
+  <a ui-sref-active="active" ui-sref="login">log in</a>
+  <a ui-sref-active="active" ui-sref="register">register</a>
+  <a href="#" ng-controller="usersController as user" ng-click="user.logOut()" ng-show="user.isLoggedIn()"> log  out</a>
+<p>Logged in as: {{ users.user.local.firstname }}</p>
+</div>
   <main class="main">
-    <a ui-sref-active="active" ui-sref="login">log in</a>
-    <a ui-sref-active="active" ui-sref="register">register</a>
-    <a href="#" ng-controller="usersController as user" ng-click="user.logOut()" ng-show="user.isLoggedIn()">log  out</a>
-    <p>{{ summoner.name }}</p>
+    
     <select ng-model="summoner.season">
       <option value="SEASON3">2013</option>
       <option value="SEASON2014">2014</option>
@@ -41,7 +49,7 @@
   
     <p>{{ summoner.region }}</p>
   
-    <button ng-click="summoner.getSummoner()" ui-sref="profile">Get Summoner</button>
+    <button class="mainButton" ng-click="summoner.getSummoner()" ui-sref="profile">Get Statistics</button>
     <p>{{ summoner.id }}</p>
   
     <div ui-view>

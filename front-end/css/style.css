@@ -1,10 +1,15 @@
 .skill_bar {
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  float: right;
   width:600px;
-  height:50px;
+  height:40px;
   background:#313131;
   margin-bottom:5px;
   border: 2px solid #949494;
   border-radius: 2px;
+  margin-top: 40px;
 }
 
 .skill_bar_sub {
@@ -18,12 +23,13 @@
 .skill_bar_progress {
   width:0%;
   height:100%;
-  background: #62EECE;
+  background: #571C78;
   text-align: center;
 }
 
 .barText {
   color: white;
+  line-height: 40px;
 }
 
 body {
@@ -64,5 +70,24 @@ button {
 
 .modal-content {
   background-color: #0A0A0A;
+}
+
+.topBar {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+
+li.ng-scope {
+  list-style: none;
+}
+
+nav {
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  height: 60px;
+  background-color: red;
 }
 
