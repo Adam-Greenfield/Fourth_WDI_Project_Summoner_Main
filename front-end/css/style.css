@@ -84,10 +84,20 @@ li.ng-scope {
 }
 
 nav {
-  display: inline-block;
+
   width: 100%;
   margin: 0 auto;
-  height: 60px;
-  background-color: red;
+  height: 40px;
+  background-color: #281B44;
 }
 
+.navUl li{
+  display: inline-block;
+  margin: 0 80px;
+  line-height: 34px;
+}
+
+#log_in_text {
+  color: white;
+  margin-left: 200px;
+}

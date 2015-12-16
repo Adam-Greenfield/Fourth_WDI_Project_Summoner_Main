@@ -30,14 +30,25 @@
 <body ng-controller="summonersController as summoner">
 <div class="topBar" ng-controller="usersController as users">
   <nav>
-    <ul>
-      <li></li>
+    <ul class="navUl">
+      <li>
+        <a ui-sref-active="active" ui-sref="login">log in</a>
+      </li>
+      <li>
+        <a ui-sref-active="active" ui-sref="register">register</a>
+      </li>
+      <li>
+        <a href="#" ng-controller="usersController as user" ng-click="user.logOut()" ng-show="user.isLoggedIn()"> log  out</a>
+      </li>
+      <li>
+        <p id="log_in_text">Logged in as: {{ users.user.local.firstname }}</p>
+      </li>
     </ul>
   </nav>
-  <a ui-sref-active="active" ui-sref="login">log in</a>
-  <a ui-sref-active="active" ui-sref="register">register</a>
-  <a href="#" ng-controller="usersController as user" ng-click="user.logOut()" ng-show="user.isLoggedIn()"> log  out</a>
-<p>Logged in as: {{ users.user.local.firstname }}</p>
+  
+
+
+
 </div>
   <main class="main">
     
