@@ -13,7 +13,7 @@ function usersController(User, TokenService, $location){
     if(token){
       console.log(res);
       self.user = TokenService.getUser();
-      $location.path('/profile');
+      $location.path('/');
     }
   }
   self.login = function(){
