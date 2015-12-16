@@ -3,7 +3,9 @@
 <head>
   <title>Summoner Main</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/normalize.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/button.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -30,7 +32,6 @@
     <a ui-sref-active="active" ui-sref="login">log in</a>
     <a ui-sref-active="active" ui-sref="register">register</a>
     <a href="#" ng-controller="usersController as user" ng-click="user.logOut()" ng-show="user.isLoggedIn()">log  out</a>
-    <input type="text" ng-model="summoner.name">
     <p>{{ summoner.name }}</p>
     <select ng-model="summoner.season">
       <option value="SEASON3">2013</option>
@@ -38,11 +39,6 @@
       <option selected="selected" value="SEASON2015">2015</option>
     </select>
   
-    <select ng-model="summoner.region">
-      <option value="euw">EUW</option>
-      <option value="eune">EUNE</option>
-      <option value="na">NA</option>
-    </select>
     <p>{{ summoner.region }}</p>
   
     <button ng-click="summoner.getSummoner()" ui-sref="profile">Get Summoner</button>

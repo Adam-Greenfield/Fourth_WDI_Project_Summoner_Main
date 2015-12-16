@@ -30,6 +30,14 @@ body {
   background-color: #060606;
 }
 
+button {
+  background-color: #003241;
+}
+
+.btn-primary {
+  background-color: #003241;
+}
+
 .main {
   margin: 0 auto;
   width: 75%;
@@ -51,5 +59,10 @@ body {
   margin-left: 180px;
   display: block;
   position: relative;
+  color: #E8E8E8;
+}
+
+.modal-content {
+  background-color: #0A0A0A;
 }
 

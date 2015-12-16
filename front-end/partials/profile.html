@@ -1,8 +1,8 @@
 <div ng-controller="championsController as champions">
   <ul>
-    <li ng-repeat="champion in summoner.champArray">
+    <li ng-repeat="champion in summoner.champArray | orderBy:'skillPercent':true">
       <img ng-src="http://ddragon.leagueoflegends.com/cdn/5.24.2/img/champion/{{ champions.champions.data[champion.id].image.full }} ">
-      <button ng-click="summoner.showStats(champion)" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{ champion.id }}">
+      <button ng-click="summoner.showStats(champion)" type="button" class="button button--quidel button--inverted" data-toggle="modal" data-target="#myModal{{ champion.id }}">
         {{ champions.champions.data[champion.id].name }}
       </button>
       <div class="skill_bar">
@@ -16,14 +16,15 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Champion stuff</h4>
+              <h4 class="modal-title" id="myModalLabel">{{ champions.champions.data[champion.id].name }}</h4>
+              <h5 class="modal-title">{{ champions.champions.data[champion.id].title }}</h5>
             </div>
             <div class="modal-body">
             <div>
               <img class="splash" ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ champions.stopGap(champions.champions.data[champion.id].name) }}_0.jpg ">
             </div>
             <ul class="sub_menu">
-              <li>{{ champions.champions.data[champion.id].name }}
+              <li><p>Games played: {{ champion.stats.totalSessionsPlayed }}</p>
               </li>
               <li><p>Skill</p>
               <div class="skill_bar_sub">
