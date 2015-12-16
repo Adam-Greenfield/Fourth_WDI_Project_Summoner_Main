@@ -19,6 +19,9 @@
               <h4 class="modal-title" id="myModalLabel">Champion stuff</h4>
             </div>
             <div class="modal-body">
+            <div>
+              <img class="splash" ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{ champions.stopGap(champions.champions.data[champion.id].name) }}_0.jpg ">
+            </div>
             <ul>
               <li>{{ champions.champions.data[champion.id].name }}
               </li>
@@ -52,7 +55,6 @@
         </div>
       </div>
     </li>
-
   </ul>
   <button ng-click="champions.check()">check</button>
 </div>

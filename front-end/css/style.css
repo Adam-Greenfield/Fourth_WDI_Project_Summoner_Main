@@ -3,7 +3,7 @@
   height:50px;
   background:#313131;
   margin-bottom:5px;
-  border: 2px solid white;
+  border: 2px solid #949494;
   border-radius: 2px;
 }
 
@@ -36,5 +36,9 @@ body {
   position: relative;
   display: block;
   background-color: #1A1A1A;
+}
+
+.splash {
+  
 }
 

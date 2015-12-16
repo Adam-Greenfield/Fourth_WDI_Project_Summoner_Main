@@ -18,9 +18,11 @@ function championsController($stateParams, $location, Champion){
     console.log(self.champion)
   }
 
-  // self.stopGap = function(name){
-  //   console.log(name);
-  //   name = name.replace(/\s+/g, '');
-  //   return name;
-  // }
+  self.stopGap = function(name){
+    console.log(name);
+    if(name.match(/\s/)){
+    name = name.replace(/\s+/g, '');
+    }
+    return name;
+  }
 }
