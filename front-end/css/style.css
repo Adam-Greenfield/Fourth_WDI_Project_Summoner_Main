@@ -101,3 +101,20 @@ nav {
   color: white;
   margin-left: 200px;
 }
+.champDiv {
+  position: relative;
+  display: block;
+  max-width:450px;
+  max-height:450px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  top: 200px;
+  background: -webkit-radial-gradient(white, #373145 95%);
+  border-radius: 225px;
+}
+
+.champLogo {
+  max-width:400px;
+  max-height:200px;
+}

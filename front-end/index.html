@@ -50,7 +50,7 @@
 
 
 </div>
-  <main class="main">
+
     
     <select ng-model="summoner.season">
       <option value="SEASON3">2013</option>
@@ -59,14 +59,15 @@
     </select>
   
     <p>{{ summoner.region }}</p>
-  
+    <div class="champDiv">
+      <img class="champLogo" src="./resources/Screen%20Shot%202015-12-16%20at%2015.21.36.png">
+    </div>
     <button class="mainButton" ng-click="summoner.getSummoner()" ui-sref="profile">Get Statistics</button>
     <p>{{ summoner.id }}</p>
   
     <div ui-view>
       
     </div>
-  </main>
 </body>
 
 </html>

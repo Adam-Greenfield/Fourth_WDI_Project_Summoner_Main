@@ -1,4 +1,5 @@
 <div ng-controller="championsController as champions">
+<main class="main">
   <ul>
     <li ng-repeat="champion in summoner.champArray | orderBy:'skillPercent':true">
       <img ng-src="http://ddragon.leagueoflegends.com/cdn/5.24.2/img/champion/{{ champions.champions.data[champion.id].image.full }} ">
@@ -57,5 +58,5 @@
       </div>
     </li>
   </ul>
-  <button ng-click="champions.check()">check</button>
+</main>
 </div>
