@@ -1,62 +1,70 @@
 <div ng-controller="championsController as champions">
-<main class="main">
-  <ul>
-    <li ng-repeat="champion in summoner.champArray | orderBy:'stats.totalSessionsPlayed':true">
-      <img ng-src="http://ddragon.leagueoflegends.com/cdn/5.24.2/img/champion/{{ champions.champions.data[champion.id].image.full }} ">
-      <button ng-click="summoner.showStats(champion)" type="button" class="button button--quidel button--inverted" data-toggle="modal" data-target="#myModal{{ champion.id }}">
-        {{ champions.champions.data[champion.id].name }}
-      </button>
-      <div class="skill_bar">
-        <div class="skill_bar_progress skill_percent" id="skill_percent{{ champion.id }}">
-          <p class="barText">Skill: {{ champion.skillPercent }} %</p>
-        </div>    
-      </div>
+  <main class="main">
+    <div class="select_group">
+      <select ng-model="summoner.season" class="season_select">
+        <option value="SEASON3">2013</option>
+        <option value="SEASON2014">2014</option>
+        <option selected="selected" value="SEASON2015">2015</option>
+      </select>
+      <button class="mainButton" ng-click="summoner.getSummoner()" ui-sref="profile">Get Statistics</button>
+    </div>
+    <ul>
+      <li ng-repeat="champion in summoner.champArray | orderBy:'stats.totalSessionsPlayed':true">
+        <img ng-src="http://ddragon.leagueoflegends.com/cdn/5.24.2/img/champion/{{ champions.champions.data[champion.id].image.full }} ">
+        <button ng-click="summoner.showStats(champion)" type="button" class="button button--quidel button--inverted" data-toggle="modal" data-target="#myModal{{ champion.id }}">
+          {{ champions.champions.data[champion.id].name }}
+        </button>
+        <div class="skill_bar">
+          <div class="skill_bar_progress skill_percent" id="skill_percent{{ champion.id }}">
+            <p class="barText">Skill: {{ champion.skillPercent }} %</p>
+          </div>    
+        </div>
 
-      <div class="modal fade" id="myModal{{ champion.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">{{ champions.champions.data[champion.id].name }}</h4>
-              <h5 class="modal-title">{{ champions.champions.data[champion.id].title }}</h5>
-            </div>
-            <div class="modal-body">
-            <div>
-              <img class="splash" ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ champions.stopGap(champions.champions.data[champion.id].name) }}_0.jpg ">
-            </div>
-            <ul class="sub_menu">
-              <li><p>Games played: {{ champion.stats.totalSessionsPlayed }}</p>
-              </li>
-              <li><p>Skill</p>
-              <div class="skill_bar_sub">
-                <div class="skill_bar_progress skill_percent" id="skill_subpercent{{ champion.id }}">
-                  <p class="barText">{{ champion.skillPercent }} %</p>
-                </div>    
+        <div class="modal fade" id="myModal{{ champion.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">{{ champions.champions.data[champion.id].name }}</h4>
+                <h5 class="modal-title">{{ champions.champions.data[champion.id].title }}</h5>
               </div>
-              </li>
-              <li><p>Winrate</p>
-                <div class="skill_bar_sub">
-                  <div class="skill_bar_progress skill_winrate" id="skill_winrate{{ champion.id }}">
-                    <p class="barText">{{ champion.percentWon }} %</p>
-                  </div>    
+              <div class="modal-body">
+                <div>
+                  <img class="splash" ng-src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ champions.stopGap(champions.champions.data[champion.id].name) }}_0.jpg ">
                 </div>
-              </li>
-              <li><p>KDA</p>
-                <div class="skill_bar_sub">
-                  <div class="skill_bar_progress skill_kda" id="skill_kda{{ champion.id }}">
-                    <p class="barText">{{ champion.killParticipation }} %</p>
-                  </div>    
-                </div>
-              </li>
-            </ul>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <ul class="sub_menu">
+                  <li><p>Games played: {{ champion.stats.totalSessionsPlayed }}</p>
+                  </li>
+                  <li><p>Skill</p>
+                    <div class="skill_bar_sub">
+                      <div class="skill_bar_progress skill_percent" id="skill_subpercent{{ champion.id }}">
+                        <p class="barText">{{ champion.skillPercent }} %</p>
+                      </div>    
+                    </div>
+                  </li>
+                  <li><p>Winrate</p>
+                    <div class="skill_bar_sub">
+                      <div class="skill_bar_progress skill_winrate" id="skill_winrate{{ champion.id }}">
+                        <p class="barText">{{ champion.percentWon }} %</p>
+                      </div>    
+                    </div>
+                  </li>
+                  <li><p>KDA</p>
+                    <div class="skill_bar_sub">
+                      <div class="skill_bar_progress skill_kda" id="skill_kda{{ champion.id }}">
+                        <p class="barText">{{ champion.killParticipation }} %</p>
+                      </div>    
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </li>
-  </ul>
-</main>
+      </li>
+    </ul>
+  </main>
 </div>
