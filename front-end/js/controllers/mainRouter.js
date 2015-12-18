@@ -6,23 +6,23 @@ function MainRouter($stateProvider, $urlRouterProvider, $locationProvider){
   $stateProvider
   .state('profile', {
     url: "/profile",
-    templateUrl: "/partials/profile.html"
+    templateUrl: "../partials/profile.html"
   })
   .state('champion', {
     url: "/champion/:id",
-    templateUrl: "/partials/champion.html", controller: "championsController as champions"
+    templateUrl: "../partials/champion.html", controller: "championsController as champions"
   })
   .state('login', {
     url: "/login",
-    templateUrl: "/partials/login.html"
+    templateUrl: "../partials/login.html"
   })
   .state('register', {
     url: "/register",
-    templateUrl: "/partials/register.html"
+    templateUrl: "../partials/register.html"
   })
   .state('home', {
     url: "/",
-    templateUrl: "/partials/home.html"
+    templateUrl: "../partials/home.html"
   })
 
   $urlRouterProvider.otherwise('/');
