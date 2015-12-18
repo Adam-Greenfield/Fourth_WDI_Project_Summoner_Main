@@ -4,6 +4,7 @@ angular
   .constant('LOL', '.api.pvp.net/api/lol/')
   .constant('LOLGLOBAL', 'https://global.api.pvp.net/api/lol/static-data/euw/v1.2/')
   .constant('LOLKEY', '1b05241e-7e60-4556-a73c-2ac841ef9735')
+  .constant('ROOT', 'http://adam-greenfield.github.io/Fourth_WDI_Project_Summoner_Main/front-end/')
   .config(function($httpProvider){
     $httpProvider.interceptors.push('AuthInterceptor');
   })

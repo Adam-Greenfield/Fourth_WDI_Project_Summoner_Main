@@ -2,27 +2,27 @@ angular
   .module('championApp')
   .config(MainRouter);
 
-function MainRouter($stateProvider, $urlRouterProvider, $locationProvider){
+function MainRouter($stateProvider, $urlRouterProvider, $locationProvider, ROOT){
   $stateProvider
   .state('profile', {
     url: "/profile",
-    templateUrl: "../partials/profile.html"
+    templateUrl: ROOT + "partials/profile.html"
   })
   .state('champion', {
     url: "/champion/:id",
-    templateUrl: "../partials/champion.html", controller: "championsController as champions"
+    templateUrl: ROOT + "partials/champion.html", controller: "championsController as champions"
   })
   .state('login', {
     url: "/login",
-    templateUrl: "../partials/login.html"
+    templateUrl: ROOT + "partials/login.html"
   })
   .state('register', {
     url: "/register",
-    templateUrl: "../partials/register.html"
+    templateUrl: ROOT + "partials/register.html"
   })
   .state('home', {
     url: "/",
-    templateUrl: "../partials/home.html"
+    templateUrl: ROOT + "partials/home.html"
   })
 
   $urlRouterProvider.otherwise('/');
