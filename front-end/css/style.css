@@ -34,6 +34,7 @@
 
 body {
   background-color: #060606;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 button {
@@ -59,7 +60,7 @@ button {
   padding: 1em 2em;
   color: white;
   border-radius: 10px;
-  background-color: #7986cb;
+  background-color: #571C78;
 }
 
 .season_select {
@@ -96,8 +97,17 @@ button {
   color: #E8E8E8;
 }
 
+.modal-title {
+  text-align: center;
+  color: #E5E5E5;
+}
+
 .modal-content {
   background-color: #0A0A0A;
+}
+
+.modal-footer {
+  border-top: 0px;
 }
 
 .topBar {
@@ -127,7 +137,7 @@ nav {
 
 #log_in_text {
   color: white;
-  margin-left: 200px;
+  margin-left: 100px;
 }
 .champDiv {
   position: relative;

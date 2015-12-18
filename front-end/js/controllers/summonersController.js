@@ -49,8 +49,6 @@ function summonersController(Summoner, TokenService, $timeout, animations){
     champion.percentWon = percentWon;
     champion.killParticipation = killParticipation;
     champion.skillPercent = skillPercent;
-    champion.kda = [stats.totalChampionKills, stats.totalDeathsPerSession, stats.totalAssists];
-    champion.dataLabels = ["Kills", "Deaths", "Assists"];
 
     function fn(){
       $('#skill_percent' + (champion.id).toString()).animate({width: champion.skillPercent + '%' }, 1000);
