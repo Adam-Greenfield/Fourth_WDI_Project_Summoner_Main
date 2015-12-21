@@ -9,7 +9,7 @@
       <button class="mainButton" ng-click="summoner.getSummoner()" ui-sref="profile">Get Statistics</button>
     </div>
     <ul>
-      <li ng-repeat="champion in summoner.champArray | orderBy:'stats.totalSessionsPlayed':true">
+      <li class="champlist" ng-repeat="champion in summoner.champArray | orderBy:'stats.totalSessionsPlayed':true">
         <img ng-src="http://ddragon.leagueoflegends.com/cdn/5.24.2/img/champion/{{ champions.champions.data[champion.id].image.full }} ">
         <button ng-click="summoner.showStats(champion)" type="button" class="button button--quidel button--inverted" data-toggle="modal" data-target="#myModal{{ champion.id }}">
           {{ champions.champions.data[champion.id].name }}

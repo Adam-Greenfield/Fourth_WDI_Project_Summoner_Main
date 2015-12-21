@@ -1,6 +1,6 @@
 angular
-  .module('championApp')
-  .controller('summonersController', summonersController);
+.module('championApp')
+.controller('summonersController', summonersController);
 
 summonersController.$inject = ['Summoner', 'TokenService', '$timeout', 'animations']
 function summonersController(Summoner, TokenService, $timeout, animations){
@@ -55,6 +55,8 @@ function summonersController(Summoner, TokenService, $timeout, animations){
     }
 
     self.showStats = function(champion){
+      // if(champion.id === 0){
+      //   champion.name = "Total Games";
       console.log("getStats");
       $('#skill_subpercent' + (champion.id).toString()).animate({width: champion.skillPercent + '%' }, 1000);
       $('#skill_winrate' + (champion.id).toString()).animate({width: champion.percentWon + '%' }, 1000);
@@ -63,8 +65,9 @@ function summonersController(Summoner, TokenService, $timeout, animations){
 
     $timeout(fn)
     return champion;
-  }
-
+  
+    }
+  
 
 
 }
