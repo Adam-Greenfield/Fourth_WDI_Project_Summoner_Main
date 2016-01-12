@@ -14,7 +14,6 @@ function championsController($stateParams, $location, Champion){
   }
 
   self.stopGap = function(name){
-    console.log(name);
     if(name.match(/\s/)){
     name = name.replace(/\s+/g, '');
     }
