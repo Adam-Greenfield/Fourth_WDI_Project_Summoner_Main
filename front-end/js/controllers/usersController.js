@@ -11,13 +11,11 @@ function usersController(User, TokenService, $location){
   function userLogIn(res){
     var token = res.token ? res.token : null
     if(token){
-      console.log(res);
       self.user = TokenService.getUser();
       $location.path('/');
     }
   }
   self.login = function(){
-    console.log('login')
     User.login(self.user, userLogIn);
 
   }
