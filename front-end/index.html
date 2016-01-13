@@ -30,7 +30,8 @@
 </head>
 
 <body ng-controller="summonersController as summoner">
-  <div class="topBar" ng-controller="usersController as users">
+<main ng-controller="usersController as users">
+  <div class="topBar">
     <nav>
       <ul class="navUl">
         <li>
@@ -43,7 +44,7 @@
           <a ui-sref-active="active" ui-sref="register">register</a>
         </li>
         <li>
-          <a href="#" ng-controller="usersController as user" ng-click="user.logOut()" ng-show="user.isLoggedIn()"> log out</a>
+          <a href="#" ng-click="users.logOut()" ng-show="users.isLoggedIn()">log out</a>
         </li>
         <li>
           <p id="log_in_text">Logged in as: {{ users.user.local.firstname }}</p>
@@ -51,10 +52,10 @@
       </ul>
     </nav>
   </div>
-  
+
   <div ui-view>
 
   </div>
-
+</main>
 </body>
 </html>
